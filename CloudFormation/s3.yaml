@@ -44,7 +44,7 @@ Resources:
           Value: !Ref Website
       WebsiteConfiguration:
         RedirectAllRequestsTo:
-          HostName: !GetAtt RootBucket.WebsiteURL  # Change to CF
+          HostName: !Ref Website  # Change to CF
           Protocol: https
 
   DevBucket:
