@@ -2,20 +2,23 @@ verson: 0.2
 
 phases:
   install:
-    - sudo pip install --upgrade --user awscli
-    - cd Website
-    - npm install
+    commands:
+      - "sudo pip install --upgrade --user awscli"
+      - "cd Website"
+      - "npm install"
   build:
-    - npm build
+    commands:
+      - "npm build"
   post_build:
-    - aws s3 rm s3://$BUCKET --recursive
-    - aws cp index.html s3://$BUCKET/index.html
-    - aws cp bundle.js s3://$BUCKET/bundle.js
-    - aws cp style s3://$BUCKET/ --recursive
-    - cd ..
+    commands:
+      - "aws s3 rm s3://$BUCKET --recursive"
+      - "aws cp index.html s3://$BUCKET/index.html"
+      - "aws cp bundle.js s3://$BUCKET/bundle.js"
+      - "aws cp style s3://$BUCKET/ --recursive"
+      - "cd .."
 artifacts:
   files:
-    - '*/index.html'
-    - '*/bundle.js'
-    - '*/style.css'
+    - "*/index.html"
+    - "*/bundle.js"
+    - "*/style.css"
   base-directory: Website
