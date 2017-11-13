@@ -6,8 +6,6 @@ import ProfilePaper from './containers/profile_paper';
 
 ReactDOM.render(
   <MuiThemeProvider>
-    <Provider>
       <ProfilePaper />
-    </Provider>
   </MuiThemeProvider>
   , document.querySelector('.container'));
