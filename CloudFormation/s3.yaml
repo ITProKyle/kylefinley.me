@@ -44,8 +44,8 @@ Resources:
           Value: !Ref Website
       WebsiteConfiguration:
         RedirectAllRequestsTo:
-          HostName: !Ref Website  # Change to CF
-          Protocol: https
+          HostName: !Ref Website
+          Protocol: http
 
   DevBucket:
     Type: AWS::S3::Bucket
