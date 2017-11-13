@@ -1,0 +1,115 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Creates S3 Bucket
+
+Parameters:
+  Website:
+    Type: String
+    Description: Website URL (example.com)
+
+  Owner:
+    Type: String
+
+
+Resources:
+
+  RootBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref Website
+      Tags:
+        - Key: Owner
+          Value: !Ref Owner
+        - Key: Environment
+          Value: Prod
+        - Key: Purpose
+          Value: Website
+        - Key: Application
+          Value: !Ref Website
+      WebsiteConfiguration:
+        IndexDocument: index.html
+        ErrorDocument: 404.html
+
+  WwwBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub www.${Website}
+      Tags:
+        - Key: Owner
+          Value: !Ref Owner
+        - Key: Environment
+          Value: Prod
+        - Key: Purpose
+          Value: Website
+        - Key: Application
+          Value: !Ref Website
+      WebsiteConfiguration:
+        RedirectAllRequestsTo:
+          HostName: !GetAtt RootBucket.WebsiteURL  # Change to CF
+          Protocol: https
+
+  DevBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub dev.${Website}
+      Tags:
+        - Key: Owner
+          Value: !Ref Owner
+        - Key: Environment
+          Value: Dev
+        - Key: Purpose
+          Value: Website
+        - Key: Application
+          Value: !Ref Website
+      WebsiteConfiguration:
+        IndexDocument: index.html
+        ErrorDocument: 404.html
+
+  BuildBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub build.${Website}
+      Tags:
+        - Key: Owner
+          Value: !Ref Owner
+        - Key: Environment
+          Value: Build
+        - Key: Purpose
+          Value: Website
+        - Key: Application
+          Value: !Ref Website
+
+  RootBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    DependsOn: RootBucket
+    Properties:
+      Bucket: !Ref RootBucket
+      PolicyDocument:
+        Statement:
+          - Action: s3:GetObject
+            Effect: Allow
+            Principal: '*'
+            Resource: !Sub ${RootBucket.Arn}/*
+
+  WwwWebsitePolicy:
+    Type: AWS::S3::BucketPolicy
+    DependsOn: WwwBucket
+    Properties:
+      Bucket: !Ref WwwBucket
+      PolicyDocument:
+        Statement:
+          - Action: s3:GetObject
+            Effect: Allow
+            Principal: '*'
+            Resource: !Sub ${WwwBucket.Arn}/*
+
+  DevBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    DependsOn: DevBucket
+    Properties:
+      Bucket: !Ref DevBucket
+      PolicyDocument:
+        Statement:
+          - Action: s3:GetObject
+            Effect: Allow
+            Principal: '*'
+            Resource: !Sub ${DevBucket.Arn}/*

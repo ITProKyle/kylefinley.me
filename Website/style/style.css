@@ -1,0 +1,68 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.svg {
+    fill: black;
+}
+
+.social-svg {
+    width: 36px;
+    height: 36px;
+}
+
+.facebook:hover {
+    fill: #3b5999;
+}
+
+.twitter:hover {
+    fill: #55acee;
+}
+
+.linkedin:hover {
+    fill: #0077B5;
+}
+
+.github:hover {
+    fill: #ea3333;
+}
+
+.instagram:hover {
+    fill: #e4405f;
+}
+
+.profile-paper {
+    margin: auto;
+    width: 40%;
+    max-width: 640px;
+    min-width: 360px;
+}
+
+.profile-social {
+    text-align: center;
+}
+
+.profile-img {
+    display: block;
+    border-radius: 2em;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: auto;
+    padding: 1em;
+}
+
+.profile-item {
+    width: 60%;
+    margin: auto;
+}
+
+.onica-link, .onica-link:visited, .onica-link:active {
+    text-decoration: none;
+    color: #2fa6de;
+}
+
+.onica-link:hover {
+    color: #6e7072;
+}
