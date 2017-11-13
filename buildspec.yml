@@ -14,7 +14,7 @@ phases:
       - "aws s3 rm s3://$BUCKET --recursive"
       - "aws s3 cp index.html s3://$BUCKET/index.html"
       - "aws s3 cp bundle.js s3://$BUCKET/bundle.js"
-      - "aws s3 cp style s3://$BUCKET/ --recursive"
+      - "aws s3 cp style s3://$BUCKET/style --recursive"
       - "cd .."
 artifacts:
   files:
