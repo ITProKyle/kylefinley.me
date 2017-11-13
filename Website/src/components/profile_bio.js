@@ -33,7 +33,7 @@ export default class ProfileBio extends Component {
               I am member of the managed services team at <a href="https://onica.com" target="_blank" className="onica-link">Onica</a> in Santa Monica, California. 
               <br />
               <br />
-              My primary focus is on creates innovative solutions to meet client needs and increase team efciency by automating complex work flows and process. My collection of custom tools is constantly evolving to incorporate the feedback of fellow team members and resolutions to problems encountered while working with a multitude of diverse environments.
+              My primary focus is on creates innovative solutions to meet client needs and increase team efficiency by automating complex work flows and process. My collection of custom tools is constantly evolving to incorporate the feedback of fellow team members and resolutions to problems encountered while working with a multitude of diverse environments.
             </CardText>
           </Card>
         </Paper>
