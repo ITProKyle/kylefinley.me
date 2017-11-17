@@ -6,6 +6,8 @@ import ProfileSocial from '../components/profile_social';
 import ProfileBio from '../components/profile_bio';
 import ProfileSkills from '../components/profile_skills';
 
+import UnderConstruction from '../components/under_construction';
+
 export default class ProfilePaper extends Component {
   render() {
     return (
@@ -16,6 +18,7 @@ export default class ProfilePaper extends Component {
           <ProfileBio />
           <ProfileSkills />
         </Paper>
+        <UnderConstruction />
       </div>
     );
   }
