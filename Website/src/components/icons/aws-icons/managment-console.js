@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class EC2 extends Component {
+export default class ManagmentConsole extends Component {
 
   render() {
     return (

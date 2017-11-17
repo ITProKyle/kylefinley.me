@@ -29,9 +29,7 @@ export default class CodePipeline extends Component {
         width="100px"
         height="100px"
         viewBox="0 0 100 100"
-        style="enable-background:new 0 0 100 100;"
       >
-      <g>
         <polygon style={this.cls4} points="49.3,60.6 15.4,64.9 24.9,79.2 60.2,62 	"/>
         <polygon style={this.cls3} points="49.3,40.3 83.3,36 73.8,21.7 38.4,38.9 	"/>
         <polygon style={this.cls1} points="38.4,38.9 73.8,33.2 73.8,21.7 38.4,31.2 	"/>
@@ -46,7 +44,6 @@ export default class CodePipeline extends Component {
         <polygon style={this.cls2} points="83.3,74.5 49.3,91.5 49.3,75.1 83.3,64.9 	"/>
         <polygon style={this.cls1} points="31.2,69.6 49.3,75.1 49.3,91.5 31.2,82.4 	"/>
         <polygon style={this.cls1} points="24.9,79.2 15.4,74.5 15.4,64.9 24.9,67.7 	"/>
-      </g>
       </svg>
       
     );

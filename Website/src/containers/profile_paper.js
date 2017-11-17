@@ -4,7 +4,7 @@ import Paper from 'material-ui/Paper';
 import ProfileImage from '../components/profile_image';
 import ProfileSocial from '../components/profile_social';
 import ProfileBio from '../components/profile_bio';
-import ProfileSkills from '../components/profile_skills'
+import ProfileSkills from '../components/profile_skills';
 
 export default class ProfilePaper extends Component {
   render() {

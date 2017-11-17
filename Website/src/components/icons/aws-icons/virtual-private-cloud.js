@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class EC2 extends Component {
+export default class VirtualPrivateCloud extends Component {
   render() {
     return (
     <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
